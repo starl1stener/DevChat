@@ -14,25 +14,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Make Snap-->
-        <scene sceneID="Z5K-Fa-MWP">
-            <objects>
-                <viewController id="LVU-T8-odl" customClass="DummyPostViewController" customModule="DevChat" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YSb-Fi-4lv"/>
-                        <viewControllerLayoutGuide type="bottom" id="kh1-2C-X8w"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xz0-Ic-672">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Make Snap" image="icon-camera" selectedImage="icon-camera-filled" id="YLO-GZ-kmr"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Hg-Oq-TJF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="122" y="163"/>
-        </scene>
         <!--Inbox-->
         <scene sceneID="uhE-d9-NjQ">
             <objects>
@@ -258,7 +239,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzg-mq-DgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895" y="887"/>
+            <point key="canvasLocation" x="894" y="233"/>
         </scene>
         <!--Message-->
         <scene sceneID="SLh-7W-frY">
@@ -282,7 +263,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZs-ht-Aag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="121" y="887"/>
+            <point key="canvasLocation" x="121" y="233"/>
         </scene>
     </scenes>
     <resources>

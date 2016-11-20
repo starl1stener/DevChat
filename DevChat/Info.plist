@@ -38,6 +38,8 @@
 	<string>To make snaps</string>
 	<key>NSCameraUsageDescription</key>
 	<string>To make snaps</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>To make snaps</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

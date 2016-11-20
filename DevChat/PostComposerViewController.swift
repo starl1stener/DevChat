@@ -32,7 +32,7 @@ class PostComposerViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        textView.becomeFirstResponder()
+//        textView.becomeFirstResponder()
         textView.text = ""
         textView.delegate = self
         
