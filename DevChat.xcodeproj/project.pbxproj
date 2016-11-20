@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		152AAF181DE1C291004E361B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AAF171DE1C291004E361B /* AppDelegate.swift */; };
-		152AAF1A1DE1C291004E361B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AAF191DE1C291004E361B /* ViewController.swift */; };
 		152AAF1D1DE1C291004E361B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152AAF1B1DE1C291004E361B /* Main.storyboard */; };
 		152AAF1F1DE1C291004E361B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 152AAF1E1DE1C291004E361B /* Assets.xcassets */; };
 		152AAF221DE1C291004E361B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152AAF201DE1C291004E361B /* LaunchScreen.storyboard */; };
+		152AAF2A1DE1C2A4004E361B /* ImagePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AAF291DE1C2A4004E361B /* ImagePickerHelper.swift */; };
+		152AAF2C1DE1C3DC004E361B /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AAF2B1DE1C3DC004E361B /* MessagesViewController.swift */; };
+		152AAF2E1DE1C3EB004E361B /* DummyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AAF2D1DE1C3EB004E361B /* DummyPostViewController.swift */; };
+		152AAF331DE1C66C004E361B /* PostComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AAF321DE1C66C004E361B /* PostComposerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		152AAF141DE1C291004E361B /* DevChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		152AAF171DE1C291004E361B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		152AAF191DE1C291004E361B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		152AAF1C1DE1C291004E361B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		152AAF1E1DE1C291004E361B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		152AAF211DE1C291004E361B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		152AAF231DE1C291004E361B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		152AAF291DE1C2A4004E361B /* ImagePickerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerHelper.swift; sourceTree = "<group>"; };
+		152AAF2B1DE1C3DC004E361B /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		152AAF2D1DE1C3EB004E361B /* DummyPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyPostViewController.swift; sourceTree = "<group>"; };
+		152AAF321DE1C66C004E361B /* PostComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostComposerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +61,40 @@
 			isa = PBXGroup;
 			children = (
 				152AAF171DE1C291004E361B /* AppDelegate.swift */,
-				152AAF191DE1C291004E361B /* ViewController.swift */,
+				152AAF2F1DE1C3F1004E361B /* Messages Tab */,
+				152AAF301DE1C3F7004E361B /* New Message Tab */,
+				152AAF311DE1C40A004E361B /* Utils */,
 				152AAF1B1DE1C291004E361B /* Main.storyboard */,
 				152AAF1E1DE1C291004E361B /* Assets.xcassets */,
 				152AAF201DE1C291004E361B /* LaunchScreen.storyboard */,
 				152AAF231DE1C291004E361B /* Info.plist */,
 			);
 			path = DevChat;
+			sourceTree = "<group>";
+		};
+		152AAF2F1DE1C3F1004E361B /* Messages Tab */ = {
+			isa = PBXGroup;
+			children = (
+				152AAF2B1DE1C3DC004E361B /* MessagesViewController.swift */,
+			);
+			name = "Messages Tab";
+			sourceTree = "<group>";
+		};
+		152AAF301DE1C3F7004E361B /* New Message Tab */ = {
+			isa = PBXGroup;
+			children = (
+				152AAF2D1DE1C3EB004E361B /* DummyPostViewController.swift */,
+				152AAF321DE1C66C004E361B /* PostComposerViewController.swift */,
+			);
+			name = "New Message Tab";
+			sourceTree = "<group>";
+		};
+		152AAF311DE1C40A004E361B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				152AAF291DE1C2A4004E361B /* ImagePickerHelper.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				152AAF1A1DE1C291004E361B /* ViewController.swift in Sources */,
+				152AAF331DE1C66C004E361B /* PostComposerViewController.swift in Sources */,
+				152AAF2C1DE1C3DC004E361B /* MessagesViewController.swift in Sources */,
+				152AAF2E1DE1C3EB004E361B /* DummyPostViewController.swift in Sources */,
+				152AAF2A1DE1C2A4004E361B /* ImagePickerHelper.swift in Sources */,
 				152AAF181DE1C291004E361B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
