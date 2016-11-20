@@ -17,6 +17,7 @@
 		188738681DE1CAB3006C6BAE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 188738671DE1CAB3006C6BAE /* GoogleService-Info.plist */; };
 		18D68A591DE1E62E000F9126 /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D68A571DE1E62E000F9126 /* RoundTextField.swift */; };
 		18D68A5A1DE1E62E000F9126 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D68A581DE1E62E000F9126 /* RoundedButton.swift */; };
+		18D68A5D1DE1EB00000F9126 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D68A5C1DE1EB00000F9126 /* LoginVC.swift */; };
 		928F4802ECF035B20AA8017E /* Pods_DevChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE1E70C5F8AE5676311D760 /* Pods_DevChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		188738671DE1CAB3006C6BAE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18D68A571DE1E62E000F9126 /* RoundTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
 		18D68A581DE1E62E000F9126 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		18D68A5C1DE1EB00000F9126 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		2498A17CED80839B941A4BC7 /* Pods-DevChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevChat/Pods-DevChat.debug.xcconfig"; sourceTree = "<group>"; };
 		CDE1E70C5F8AE5676311D760 /* Pods_DevChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7357A903BF2930F4A320C0 /* Pods-DevChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevChat/Pods-DevChat.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				152AAF321DE1C66C004E361B /* PostComposerViewController.swift */,
+				18D68A5C1DE1EB00000F9126 /* LoginVC.swift */,
 			);
 			name = "New Message Tab";
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			files = (
 				152AAF331DE1C66C004E361B /* PostComposerViewController.swift in Sources */,
 				18D68A5A1DE1E62E000F9126 /* RoundedButton.swift in Sources */,
+				18D68A5D1DE1EB00000F9126 /* LoginVC.swift in Sources */,
 				152AAF2C1DE1C3DC004E361B /* MessagesViewController.swift in Sources */,
 				18D68A591DE1E62E000F9126 /* RoundTextField.swift in Sources */,
 				152AAF2A1DE1C2A4004E361B /* ImagePickerHelper.swift in Sources */,

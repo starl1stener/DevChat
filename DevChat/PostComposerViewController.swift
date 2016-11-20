@@ -8,6 +8,7 @@
 
 import UIKit
 import MobileCoreServices
+import FirebaseAuth
 
 class PostComposerViewController: UITableViewController {
     
@@ -21,13 +22,20 @@ class PostComposerViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // Check if user logged in
+        
+        guard FIRAuth.auth()?.currentUser != nil else {
+            performSegue(withIdentifier: "loginVC", sender: nil)
+            return
+        }
   
         if imagePicker == nil && image == nil && videoFilePath == nil {
-            
             showPhotoSourceSelection()
-            
         }
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
