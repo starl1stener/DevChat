@@ -9,6 +9,8 @@
 import Foundation
 import FirebaseAuth
 
+typealias CompletionHandler = (_ errMsg: String?, _ data: AnyObject?) -> Void
+
 class AuthService {
     
     private static let _instance = AuthService()
@@ -17,7 +19,7 @@ class AuthService {
         return _instance
     }
     
-    func login(email: String, password: String) {
+    func login(email: String, password: String, onComplete: CompletionHandler?) {
         
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             
@@ -29,6 +31,7 @@ class AuthService {
                         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
                             if error != nil {
                                 // Show error to user
+                                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete)
                                 
                             } else {
                                 
@@ -40,8 +43,12 @@ class AuthService {
                                     FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                                         if error != nil {
                                             // Show error to user
+                                            
+                                            self.handleFirebaseError(error: error! as NSError, onComplete: onComplete)
+                                            
                                         } else {
                                             // We have successfully logged in
+                                            onComplete?(nil, user)
                                         }
                                     })
                                 }
@@ -49,16 +56,54 @@ class AuthService {
                         })
                     } else {
                         // Handle all other signIn errors
+                        self.handleFirebaseError(error: error! as NSError, onComplete: onComplete)
                         
                     }
                     
                 }
             } else {
                 // Successfully logged in
+                onComplete?(nil, user)
             }
             
         })
     }
+    
+    
+    
+    func handleFirebaseError(error: NSError, onComplete: CompletionHandler?) {
+        print(error.debugDescription)
+        
+        if let errorCode = FIRAuthErrorCode(rawValue: error._code) {
+            switch errorCode {
+            case .errorCodeInvalidEmail:
+                onComplete?("Invalid email address", nil)
+                
+            case .errorCodeWrongPassword:
+                onComplete?("Invalid password", nil)
+                
+            case .errorCodeAccountExistsWithDifferentCredential:
+                fallthrough
+            case .errorCodeEmailAlreadyInUse:
+                onComplete?("Email already in use", nil)
+
+            default:
+                onComplete?("There was a problem authenticating. Try again", nil)
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 }

@@ -24,7 +24,16 @@ class LoginVC: UIViewController {
             
             // Call the login service
             
-            AuthService.instance.login(email: email, password: passwd)
+            AuthService.instance.login(email: email, password: passwd, onComplete: { (errMsg, data) in
+                guard errMsg == nil else {
+                    
+                    GeneralHelper.sharedHelper.showAlertOnViewController(viewController: self, withTitle: "Error authentication", message: errMsg!, buttonTitle: "OK")
+                    
+                    return
+                }
+                
+                self.dismiss(animated: true, completion: nil)
+            })
             
             
         } else {
