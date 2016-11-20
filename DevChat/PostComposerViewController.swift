@@ -10,6 +10,8 @@ import UIKit
 import MobileCoreServices
 import FirebaseAuth
 
+
+
 class PostComposerViewController: UITableViewController {
     
     fileprivate var image: UIImage!
@@ -116,12 +118,7 @@ class PostComposerViewController: UITableViewController {
     */
     
 
-    func showAlert(title: String, message: String, buttonTitle: String) {
-        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: buttonTitle, style: .default, handler: nil)
-        alertVC.addAction(action)
-        present(alertVC, animated: true, completion: nil)
-    }
+    
 
     
     @IBAction func cancelDidTap() {
