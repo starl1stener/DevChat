@@ -14,7 +14,7 @@
 		152AAF2A1DE1C2A4004E361B /* ImagePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AAF291DE1C2A4004E361B /* ImagePickerHelper.swift */; };
 		152AAF2C1DE1C3DC004E361B /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AAF2B1DE1C3DC004E361B /* MessagesViewController.swift */; };
 		152AAF331DE1C66C004E361B /* PostComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AAF321DE1C66C004E361B /* PostComposerViewController.swift */; };
-		188738681DE1CAB3006C6BAE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 188738671DE1CAB3006C6BAE /* GoogleService-Info.plist */; };
+		1856FF391DE21A4A00EA3D5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1856FF381DE21A4A00EA3D5C /* GoogleService-Info.plist */; };
 		18D68A591DE1E62E000F9126 /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D68A571DE1E62E000F9126 /* RoundTextField.swift */; };
 		18D68A5A1DE1E62E000F9126 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D68A581DE1E62E000F9126 /* RoundedButton.swift */; };
 		18D68A5D1DE1EB00000F9126 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D68A5C1DE1EB00000F9126 /* LoginVC.swift */; };
@@ -33,7 +33,7 @@
 		152AAF291DE1C2A4004E361B /* ImagePickerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerHelper.swift; sourceTree = "<group>"; };
 		152AAF2B1DE1C3DC004E361B /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		152AAF321DE1C66C004E361B /* PostComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostComposerViewController.swift; sourceTree = "<group>"; };
-		188738671DE1CAB3006C6BAE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1856FF381DE21A4A00EA3D5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18D68A571DE1E62E000F9126 /* RoundTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
 		18D68A581DE1E62E000F9126 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		18D68A5C1DE1EB00000F9126 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 				152AAF1E1DE1C291004E361B /* Assets.xcassets */,
 				152AAF201DE1C291004E361B /* LaunchScreen.storyboard */,
 				152AAF231DE1C291004E361B /* Info.plist */,
-				188738671DE1CAB3006C6BAE /* GoogleService-Info.plist */,
+				1856FF381DE21A4A00EA3D5C /* GoogleService-Info.plist */,
 			);
 			path = DevChat;
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				152AAF221DE1C291004E361B /* LaunchScreen.storyboard in Resources */,
-				188738681DE1CAB3006C6BAE /* GoogleService-Info.plist in Resources */,
+				1856FF391DE21A4A00EA3D5C /* GoogleService-Info.plist in Resources */,
 				152AAF1F1DE1C291004E361B /* Assets.xcassets in Resources */,
 				152AAF1D1DE1C291004E361B /* Main.storyboard in Resources */,
 			);
