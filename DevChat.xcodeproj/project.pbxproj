@@ -15,6 +15,10 @@
 		152AAF2C1DE1C3DC004E361B /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AAF2B1DE1C3DC004E361B /* MessagesViewController.swift */; };
 		152AAF331DE1C66C004E361B /* PostComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AAF321DE1C66C004E361B /* PostComposerViewController.swift */; };
 		1856FF391DE21A4A00EA3D5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1856FF381DE21A4A00EA3D5C /* GoogleService-Info.plist */; };
+		1856FF3B1DE21C8200EA3D5C /* DataSevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1856FF3A1DE21C8200EA3D5C /* DataSevice.swift */; };
+		1856FF3D1DE221D300EA3D5C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1856FF3C1DE221D300EA3D5C /* UserCell.swift */; };
+		1856FF401DE2223500EA3D5C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1856FF3F1DE2223500EA3D5C /* User.swift */; };
+		1856FF421DE222E700EA3D5C /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1856FF411DE222E700EA3D5C /* UsersVC.swift */; };
 		18D68A591DE1E62E000F9126 /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D68A571DE1E62E000F9126 /* RoundTextField.swift */; };
 		18D68A5A1DE1E62E000F9126 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D68A581DE1E62E000F9126 /* RoundedButton.swift */; };
 		18D68A5D1DE1EB00000F9126 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D68A5C1DE1EB00000F9126 /* LoginVC.swift */; };
@@ -34,6 +38,11 @@
 		152AAF2B1DE1C3DC004E361B /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		152AAF321DE1C66C004E361B /* PostComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostComposerViewController.swift; sourceTree = "<group>"; };
 		1856FF381DE21A4A00EA3D5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1856FF3A1DE21C8200EA3D5C /* DataSevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSevice.swift; sourceTree = "<group>"; };
+		1856FF3C1DE221D300EA3D5C /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		1856FF3F1DE2223500EA3D5C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1856FF411DE222E700EA3D5C /* UsersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
+		1856FF431DE22B2700EA3D5C /* DevChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DevChat.entitlements; sourceTree = "<group>"; };
 		18D68A571DE1E62E000F9126 /* RoundTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
 		18D68A581DE1E62E000F9126 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		18D68A5C1DE1EB00000F9126 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -77,12 +86,13 @@
 		152AAF161DE1C291004E361B /* DevChat */ = {
 			isa = PBXGroup;
 			children = (
+				1856FF431DE22B2700EA3D5C /* DevChat.entitlements */,
 				152AAF171DE1C291004E361B /* AppDelegate.swift */,
 				18D68A601DE1EE5F000F9126 /* Services */,
+				1856FF3E1DE2221700EA3D5C /* Model */,
 				18D68A5B1DE1E633000F9126 /* Views */,
 				152AAF2F1DE1C3F1004E361B /* Messages Tab */,
 				152AAF301DE1C3F7004E361B /* New Message Tab */,
-				152AAF311DE1C40A004E361B /* Utils */,
 				152AAF1B1DE1C291004E361B /* Main.storyboard */,
 				152AAF1E1DE1C291004E361B /* Assets.xcassets */,
 				152AAF201DE1C291004E361B /* LaunchScreen.storyboard */,
@@ -96,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				152AAF2B1DE1C3DC004E361B /* MessagesViewController.swift */,
+				1856FF3C1DE221D300EA3D5C /* UserCell.swift */,
+				1856FF411DE222E700EA3D5C /* UsersVC.swift */,
 			);
 			name = "Messages Tab";
 			sourceTree = "<group>";
@@ -109,13 +121,12 @@
 			name = "New Message Tab";
 			sourceTree = "<group>";
 		};
-		152AAF311DE1C40A004E361B /* Utils */ = {
+		1856FF3E1DE2221700EA3D5C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				152AAF291DE1C2A4004E361B /* ImagePickerHelper.swift */,
-				18D68A5E1DE1ED26000F9126 /* GeneralHelper.swift */,
+				1856FF3F1DE2223500EA3D5C /* User.swift */,
 			);
-			name = Utils;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		18D68A5B1DE1E633000F9126 /* Views */ = {
@@ -131,6 +142,9 @@
 			isa = PBXGroup;
 			children = (
 				18D68A611DE1EE6D000F9126 /* AuthService.swift */,
+				1856FF3A1DE21C8200EA3D5C /* DataSevice.swift */,
+				152AAF291DE1C2A4004E361B /* ImagePickerHelper.swift */,
+				18D68A5E1DE1ED26000F9126 /* GeneralHelper.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -189,6 +203,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 358V8FBM3U;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -283,8 +302,12 @@
 				18D68A621DE1EE6D000F9126 /* AuthService.swift in Sources */,
 				152AAF2C1DE1C3DC004E361B /* MessagesViewController.swift in Sources */,
 				18D68A5F1DE1ED26000F9126 /* GeneralHelper.swift in Sources */,
+				1856FF3B1DE21C8200EA3D5C /* DataSevice.swift in Sources */,
 				18D68A591DE1E62E000F9126 /* RoundTextField.swift in Sources */,
+				1856FF401DE2223500EA3D5C /* User.swift in Sources */,
+				1856FF421DE222E700EA3D5C /* UsersVC.swift in Sources */,
 				152AAF2A1DE1C2A4004E361B /* ImagePickerHelper.swift in Sources */,
+				1856FF3D1DE221D300EA3D5C /* UserCell.swift in Sources */,
 				152AAF181DE1C291004E361B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +432,7 @@
 			baseConfigurationReference = 2498A17CED80839B941A4BC7 /* Pods-DevChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DevChat/DevChat.entitlements;
 				DEVELOPMENT_TEAM = 358V8FBM3U;
 				INFOPLIST_FILE = DevChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -423,6 +447,7 @@
 			baseConfigurationReference = DC7357A903BF2930F4A320C0 /* Pods-DevChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DevChat/DevChat.entitlements;
 				DEVELOPMENT_TEAM = 358V8FBM3U;
 				INFOPLIST_FILE = DevChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

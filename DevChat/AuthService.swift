@@ -39,6 +39,9 @@ class AuthService {
                                 
                                 if user?.uid != nil {
                                     
+                                    // Creating new user in Firebase Database
+                                    DataService.instance.saveUser(uid: user!.uid)
+                                    
                                     // Sign in
                                     FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                                         if error != nil {
@@ -48,6 +51,7 @@ class AuthService {
                                             
                                         } else {
                                             // We have successfully logged in
+                                            
                                             onComplete?(nil, user)
                                         }
                                     })
