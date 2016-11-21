@@ -118,7 +118,22 @@ class PostComposerViewController: UITableViewController {
     */
     
 
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "UsersVC" {
+            if let usersVC = segue.destination as? UsersVC {
+                if let videoDict = sender as? [String: URL] {
+                    let url = videoDict["videoURL"]
+                    usersVC.videoURL = url
+                    
+                } else if let imageDict = sender as? [String: UIImage] {
+                    let image = imageDict["snapshotImage"]
+                    usersVC.image = image
+                }
+                
+                
+            }
+        }
+    }
 
     
     @IBAction func cancelDidTap() {
@@ -170,12 +185,24 @@ extension PostComposerViewController: UIImagePickerControllerDelegate, UINavigat
         
         if mediaType == kUTTypeImage as String {
             // photo
-            self.image = info[UIImagePickerControllerOriginalImage] as! UIImage
+            
+            let snapshotImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            
+            self.image = snapshotImage
             self.imageView.image = self.image
+            
+            performSegue(withIdentifier: "UsersVC", sender: ["snapshotImage": snapshotImage])
+            
+            
         } else {
             // video
-            videoFilePath = (info[UIImagePickerControllerMediaURL] as! URL).path
-            UISaveVideoAtPathToSavedPhotosAlbum(videoFilePath, nil, nil, nil)
+//            videoFilePath = (info[UIImagePickerControllerMediaURL] as! URL).path
+//            UISaveVideoAtPathToSavedPhotosAlbum(videoFilePath, nil, nil, nil)
+            
+            let videoURL = info[UIImagePickerControllerMediaURL] as! URL
+            
+            performSegue(withIdentifier: "UsersVC", sender: ["videoURL": videoURL])
+            
         }
         
         dismiss(animated: true, completion: nil)
