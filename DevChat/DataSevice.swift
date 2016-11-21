@@ -54,6 +54,26 @@ class DataService {
     }
     
     
+    func sendMediaPullRequest(senderUID: String, sendingTo:[String: User], mediaURL: URL, textSnippet: String? = nil) {
+        
+        var uids = [String: Any]()
+        for uid in sendingTo.keys {
+            uids[uid] = true
+
+        }
+
+        
+        let pr: [String: Any] = [
+            "mediaURL": mediaURL.absoluteString,
+            "userID": senderUID,
+            "openCount": 0,
+            "recipients": uids
+        ]
+        
+        mainRef.child("pullRequests").childByAutoId().setValue(pr)
+        
+    }
+    
 }
 
 

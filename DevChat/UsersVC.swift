@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseStorage
+import FirebaseAuth
 
 class UsersVC: UIViewController {
     
@@ -110,11 +111,14 @@ class UsersVC: UIViewController {
                     
                     print("===NAG=== downloadURL = \(downloadURL)")
                     
-                    self.dismiss(animated: true, completion: nil)
+                    DataService.instance.sendMediaPullRequest(senderUID: (FIRAuth.auth()?.currentUser?.uid)!, sendingTo: self.selectedUsers, mediaURL: downloadURL!, textSnippet: "Text Snippet for video snap")
+                    
+                    
                     
                 }
                 
             })
+            self.dismiss(animated: true, completion: nil)
 
         } else if let image = _image {
             if let imageData = UIImageJPEGRepresentation(image, 0.2) {
@@ -136,11 +140,13 @@ class UsersVC: UIViewController {
                         
                         print("===NAG=== downloadURL = \(downloadURL)")
                         
-                        self.dismiss(animated: true, completion: nil)
+                        DataService.instance.sendMediaPullRequest(senderUID: (FIRAuth.auth()?.currentUser?.uid)!, sendingTo: self.selectedUsers, mediaURL: downloadURL!, textSnippet: "Text snippet for image snap")
+                        
                     }
                 })
                 
-                
+                self.dismiss(animated: true, completion: nil)
+
                 
             }
         }
