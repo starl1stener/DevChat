@@ -44,12 +44,6 @@ class UsersVC: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        print("===NAG=== USERSVC viewWillAppear")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -87,12 +81,21 @@ class UsersVC: UIViewController {
         })
     }
     
+    deinit {
+        print("===NAG=== DEINIT")
+    }
     
+    @IBAction func cancelDidTap() {
+        
+        _image = nil
+        _videoURL = nil
+        
+        users.removeAll()
+        selectedUsers.removeAll()
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     
-    
-    
-    
-
     @IBAction func sendPRBtnPressed(sender: AnyObject) {
         
         if let url = _videoURL {
@@ -115,18 +118,13 @@ class UsersVC: UIViewController {
 
                     let downloadURL = meta!.downloadURL()
                     
-                    // save this somewhere
-                    
                     print("===NAG=== downloadURL = \(downloadURL)")
                     
                     DataService.instance.sendMediaPullRequest(senderUID: (FIRAuth.auth()?.currentUser?.uid)!, sendingTo: self.selectedUsers, mediaURL: downloadURL!, textSnippet: "Text Snippet for video snap")
-                    
-                    
-                    
                 }
                 
             })
-            self.dismiss(animated: true, completion: nil)
+            
 
         } else if let image = _image {
             if let imageData = UIImageJPEGRepresentation(image, 0.2) {
@@ -153,14 +151,13 @@ class UsersVC: UIViewController {
                     }
                 })
                 
-                self.navigationController?.popViewController(animated: true)
-
-                
             }
         }
         
-        
+        self.cancelDidTap()
     }
+    
+    
     
 }
 

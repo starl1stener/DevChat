@@ -291,7 +291,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Send a pull request" id="BNL-9Q-MCA">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="cAd-8H-5vB">
+                            <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            <connections>
+                                <action selector="cancelDidTap" destination="tM6-fC-Tit" id="iaQ-bA-xCQ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="send_snap" id="0Jy-bA-4Vu">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="sendPRBtnPressedWithSender:" destination="tM6-fC-Tit" id="Kmx-Sl-7a5"/>
                             </connections>
