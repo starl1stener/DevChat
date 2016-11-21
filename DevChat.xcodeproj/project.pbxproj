@@ -11,9 +11,10 @@
 		152AAF1D1DE1C291004E361B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152AAF1B1DE1C291004E361B /* Main.storyboard */; };
 		152AAF1F1DE1C291004E361B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 152AAF1E1DE1C291004E361B /* Assets.xcassets */; };
 		152AAF221DE1C291004E361B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152AAF201DE1C291004E361B /* LaunchScreen.storyboard */; };
-		152AAF2A1DE1C2A4004E361B /* ImagePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AAF291DE1C2A4004E361B /* ImagePickerHelper.swift */; };
+		152AAF2A1DE1C2A4004E361B /* MediaPickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AAF291DE1C2A4004E361B /* MediaPickerHelper.swift */; };
 		152AAF2C1DE1C3DC004E361B /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AAF2B1DE1C3DC004E361B /* MessagesViewController.swift */; };
 		152AAF331DE1C66C004E361B /* PostComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152AAF321DE1C66C004E361B /* PostComposerViewController.swift */; };
+		15EF52651DE331F0007C621E /* DummyPostComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EF52641DE331F0007C621E /* DummyPostComposerViewController.swift */; };
 		1856FF391DE21A4A00EA3D5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1856FF381DE21A4A00EA3D5C /* GoogleService-Info.plist */; };
 		1856FF3B1DE21C8200EA3D5C /* DataSevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1856FF3A1DE21C8200EA3D5C /* DataSevice.swift */; };
 		1856FF3D1DE221D300EA3D5C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1856FF3C1DE221D300EA3D5C /* UserCell.swift */; };
@@ -34,9 +35,10 @@
 		152AAF1E1DE1C291004E361B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		152AAF211DE1C291004E361B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		152AAF231DE1C291004E361B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		152AAF291DE1C2A4004E361B /* ImagePickerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerHelper.swift; sourceTree = "<group>"; };
+		152AAF291DE1C2A4004E361B /* MediaPickerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPickerHelper.swift; sourceTree = "<group>"; };
 		152AAF2B1DE1C3DC004E361B /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		152AAF321DE1C66C004E361B /* PostComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostComposerViewController.swift; sourceTree = "<group>"; };
+		15EF52641DE331F0007C621E /* DummyPostComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyPostComposerViewController.swift; sourceTree = "<group>"; };
 		1856FF381DE21A4A00EA3D5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1856FF3A1DE21C8200EA3D5C /* DataSevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSevice.swift; sourceTree = "<group>"; };
 		1856FF3C1DE221D300EA3D5C /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				152AAF321DE1C66C004E361B /* PostComposerViewController.swift */,
 				18D68A5C1DE1EB00000F9126 /* LoginVC.swift */,
+				15EF52641DE331F0007C621E /* DummyPostComposerViewController.swift */,
 			);
 			name = "New Message Tab";
 			sourceTree = "<group>";
@@ -143,7 +146,7 @@
 			children = (
 				18D68A611DE1EE6D000F9126 /* AuthService.swift */,
 				1856FF3A1DE21C8200EA3D5C /* DataSevice.swift */,
-				152AAF291DE1C2A4004E361B /* ImagePickerHelper.swift */,
+				152AAF291DE1C2A4004E361B /* MediaPickerHelper.swift */,
 				18D68A5E1DE1ED26000F9126 /* GeneralHelper.swift */,
 			);
 			name = Services;
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				152AAF331DE1C66C004E361B /* PostComposerViewController.swift in Sources */,
+				15EF52651DE331F0007C621E /* DummyPostComposerViewController.swift in Sources */,
 				18D68A5A1DE1E62E000F9126 /* RoundedButton.swift in Sources */,
 				18D68A5D1DE1EB00000F9126 /* LoginVC.swift in Sources */,
 				18D68A621DE1EE6D000F9126 /* AuthService.swift in Sources */,
@@ -306,7 +310,7 @@
 				18D68A591DE1E62E000F9126 /* RoundTextField.swift in Sources */,
 				1856FF401DE2223500EA3D5C /* User.swift in Sources */,
 				1856FF421DE222E700EA3D5C /* UsersVC.swift in Sources */,
-				152AAF2A1DE1C2A4004E361B /* ImagePickerHelper.swift in Sources */,
+				152AAF2A1DE1C2A4004E361B /* MediaPickerHelper.swift in Sources */,
 				1856FF3D1DE221D300EA3D5C /* UserCell.swift in Sources */,
 				152AAF181DE1C291004E361B /* AppDelegate.swift in Sources */,
 			);

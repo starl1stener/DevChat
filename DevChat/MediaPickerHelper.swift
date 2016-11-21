@@ -1,5 +1,5 @@
 //
-//  ImagePickerHelper.swift
+//  MediaPickerHelper.swift
 //  SYA2_Moments
 //
 //  Created by Anton Novoselov on 08/11/2016.
@@ -9,18 +9,18 @@
 import UIKit
 import MobileCoreServices
 
-typealias ImagePickerHelperCompletion = ((UIImage?) -> Void)!
+typealias MediaPickerHelperCompletion = ((Any?) -> Void)!
 
-class ImagePickerHelper: NSObject {
+class MediaPickerHelper: NSObject {
     
     // actionsheet, imagePickerController ==> viewController
     
     weak var viewController: UIViewController!
     
-    var completion: ImagePickerHelperCompletion
+    var completion: MediaPickerHelperCompletion
     
     
-    init(viewController: UIViewController, completion: ImagePickerHelperCompletion) {
+    init(viewController: UIViewController, completion: MediaPickerHelperCompletion) {
         self.viewController = viewController
         self.completion = completion
         
@@ -30,7 +30,7 @@ class ImagePickerHelper: NSObject {
     }
     
     func showPhotoSourceSelection() {
-        let actionSheet = UIAlertController(title: "Pick New Photo", message: "Would you like to open photos library or camera", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Pick New Media", message: "Would you like to open photos library or camera", preferredStyle: .actionSheet)
         
         let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: {
             action in
@@ -61,14 +61,18 @@ class ImagePickerHelper: NSObject {
     func showImagePicker(sourceType: UIImagePickerControllerSourceType) {
         
         let imagePicker = UIImagePickerController()
-        
-        imagePicker.allowsEditing = true
-        imagePicker.sourceType = sourceType
-        
-        imagePicker.mediaTypes = [kUTTypeImage as String]
-        
         imagePicker.delegate = self
         
+        imagePicker.sourceType = sourceType
+
+//        imagePicker.mediaTypes = [kUTTypeImage as String]
+        
+        imagePicker.allowsEditing = false
+        
+        imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: imagePicker.sourceType)!
+
+        imagePicker.videoMaximumDuration = 10
+
         viewController.present(imagePicker, animated: true, completion: nil)
     }
     
@@ -77,18 +81,47 @@ class ImagePickerHelper: NSObject {
 
 
 
-extension ImagePickerHelper: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension MediaPickerHelper: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         viewController.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let image = info[UIImagePickerControllerEditedImage] as! UIImage
+        
         
         viewController.dismiss(animated: true, completion: nil)
         
-        completion(image)
+        
+        let mediaType = info[UIImagePickerControllerMediaType] as! String
+        
+        if mediaType == kUTTypeImage as String {
+            // photo
+            
+            let snapshotImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            
+//            self.image = snapshotImage
+//            self.imageView.image = self.image
+            
+            completion(snapshotImage)
+            
+            
+        } else {
+            // video
+            //            videoFilePath = (info[UIImagePickerControllerMediaURL] as! URL).path
+            //            UISaveVideoAtPathToSavedPhotosAlbum(videoFilePath, nil, nil, nil)
+            
+            let videoURL = info[UIImagePickerControllerMediaURL] as! URL
+            
+            completion(videoURL)
+            
+        }
+        
+   
+        
+//        let image = info[UIImagePickerControllerEditedImage] as! UIImage
+        
+        
         
     }
     

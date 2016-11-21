@@ -18,6 +18,8 @@ class UsersVC: UIViewController {
     var users = [User]()
     var selectedUsers = [String: User]()
     
+    
+    
     private var _image: UIImage?
     private var _videoURL: URL?
     
@@ -40,6 +42,12 @@ class UsersVC: UIViewController {
         get {
             return _videoURL
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("===NAG=== USERSVC viewWillAppear")
     }
     
     override func viewDidLoad() {
@@ -145,7 +153,7 @@ class UsersVC: UIViewController {
                     }
                 })
                 
-                self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
 
                 
             }
